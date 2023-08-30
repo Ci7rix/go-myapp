@@ -13,6 +13,7 @@ func main() {
 	ip := os.Getenv("IP")
 	pod := os.Getenv("POD")
 	node := os.Getenv("NODE")
+	namespace := os.Getenv("NAMESPACE")
 
 	e := echo.New()
 	e.Use(middleware.CORS())
@@ -23,6 +24,7 @@ func main() {
 			"ip":        ip,
 			"pod":       pod,
 			"node":      node,
+			"namespace": namespace,
 		}
 
 		// Return mock data as JSON response
